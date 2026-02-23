@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import './global.css'
 import { UserProvider } from "./Context/UserContext";
+import { Analytics } from '@vercel/analytics/next';
 
 interface Props{
     children: React.ReactNode
@@ -18,6 +19,7 @@ const RootLayout = (props: Props) => {
             <UserProvider>
                 <body>
                 {props.children}
+                <Analytics />
             </body>
             </UserProvider>
             
